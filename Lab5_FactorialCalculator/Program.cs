@@ -1,6 +1,6 @@
 ﻿bool runningProgram = true;
 bool doingExercise = true;
-int number;
+long number;
 
 Introduction();
 
@@ -76,17 +76,17 @@ static bool RunProgramAgain()
     }
     return false;
 }
-static int GetFactorial(int number)
+static long GetFactorial(long number)
 {
-    List<int> numbersList = new List<int>();
+    List<long> numbersList = new List<long>();
     for (int i = 1; i <= number; i++)
     {
         numbersList.Add(i);
     }
-    int factorial = numbersList.Aggregate((a, x) => a * x);
+    long factorial = numbersList.Aggregate((a, x) => a * x);
     return factorial;
 }
-static int GetNumber()
+static long GetNumber()
 {
     bool gettingNumber = true;
     while (gettingNumber)
@@ -94,7 +94,7 @@ static int GetNumber()
         Console.WriteLine("Enter a number between 1 and 10 inclusive, and I will calculate and display it's factorial value.");
         Console.Write("Enter your number now: ");
         string enteredNumber = Console.ReadLine();
-        bool isANumber = int.TryParse(enteredNumber, out int number);
+        bool isANumber = long.TryParse(enteredNumber, out long number);
         if (isANumber)
         {
             return number;
